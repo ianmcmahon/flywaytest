@@ -1,0 +1,11 @@
+version: '3'
+services:
+  seds:
+    image: blacklabelops/hsqldb
+    environment:
+      -  HSQLDB_DATABASE_ALIAS=skd
+  seds-migrate:
+    image: boxfuse/flyway:latest
+    command: -url=jdbc:hsqldb:hsql://seds/skd migrate
+    volumes:
+      - ./scripts:/flyway/sql

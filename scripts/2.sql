@@ -1,0 +1,3 @@
+CREATE TABLE bar (
+  baz VARCHAR(10) NOT NULL;
+);
